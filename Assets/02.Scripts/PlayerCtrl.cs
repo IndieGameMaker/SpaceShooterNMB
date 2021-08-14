@@ -4,36 +4,30 @@ using UnityEngine;
 
 public class PlayerCtrl : MonoBehaviour
 {
-    void Awake()
-    {
+    public Transform tr;
 
-    }
+    private float h, v;
 
-    void OnEnable()
-    {
-
-    }
-
-    // Start is called before the first frame update
     void Start()
     {
-
+        tr = GetComponent<Transform>();  // tr = this.gameObject.GetComponent<Transform>();
     }
 
     // 렌더링 주기 30FPS = 1/30 sec
     void Update()
     {
-        //
+        //tr.position += new Vector3(0, 0, 0.1f);
+        tr.position += Vector3.forward * 0.1f;
     }
 
-    // 물리엔진의 계산주기 0.02f
-    void FixedUpdate()
-    {
+    /*
+        정규화 벡터 (Normalized Vector), 단위벡터(Unit Vector)
 
-    }
+        Vector3.forward = Vector3(0, 0, 1)
+        Vector3.up      = Vector3(0, 1, 0)
+        Vector3.right   = Vector3(1, 0, 0)
 
-    void LateUpdate()
-    {
-        //
-    }
+        Vector3.zero    = Vector3(0, 0, 0)
+        Vector3.one     = Vector3(1, 1, 1)
+    */
 }
