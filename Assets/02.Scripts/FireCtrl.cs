@@ -16,3 +16,6 @@ public class FireCtrl : MonoBehaviour
         }
     }
 }
+
+
+
