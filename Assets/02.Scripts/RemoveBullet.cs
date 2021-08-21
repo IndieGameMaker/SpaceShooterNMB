@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class RemoveBullet : MonoBehaviour
 {
+    public GameObject sparkEffect;
+
     // 충돌 콜백함수(이벤트)
     void OnCollisionEnter(Collision coll)
     {
