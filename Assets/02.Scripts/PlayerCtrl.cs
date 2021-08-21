@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerCtrl : MonoBehaviour
 {
-    public Transform tr;
+    private Transform tr;
+    private Animation anim;
 
     private float h, v, r;
     [System.NonSerialized]
@@ -15,6 +16,9 @@ public class PlayerCtrl : MonoBehaviour
     void Start()
     {
         tr = GetComponent<Transform>();  // tr = this.gameObject.GetComponent<Transform>();
+        anim = GetComponent<Animation>();
+
+        anim.Play("Idle");
     }
 
     // 렌더링 주기 30FPS = 1/30 sec
