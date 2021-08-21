@@ -7,6 +7,7 @@ public class MonsterCtrl : MonoBehaviour
 {
     private Transform playerTr;
     private NavMeshAgent agent;
+    private Animator anim;
 
     void Start()
     {
@@ -14,6 +15,8 @@ public class MonsterCtrl : MonoBehaviour
         GameObject playerObject = GameObject.FindGameObjectWithTag("PLAYER");
         playerTr = playerObject.GetComponent<Transform>();
         agent = GetComponent<NavMeshAgent>();
+        anim = GetComponent<Animator>();
+
         //playerTr = GameObject.FindGameObjectWithTag("PLAYER")?.GetComponent<Transform>();
     }
 
@@ -21,5 +24,6 @@ public class MonsterCtrl : MonoBehaviour
     void Update()
     {
         agent.SetDestination(playerTr.position);
+        anim.SetBool("IsTrace", true);
     }
 }
