@@ -35,6 +35,31 @@ public class PlayerCtrl : MonoBehaviour
         tr.Rotate(Vector3.up * Time.deltaTime * turnSpeed * r);
     }
 
+    void PlayerAnimation()
+    {
+        if (v >= 0.1f) // 전진
+        {
+            anim.CrossFade("RunF", 0.25f);
+        }
+        else if (v <= -0.1f) // 후진
+        {
+            anim.CrossFade("RunB", 0.25f);
+        }
+        else if (h >= 0.1f) // 오른쪽 이동
+        {
+            anim.CrossFade("RunR", 0.25f);
+        }
+        else if (h <= -0.1f) // 왼쪽 이동
+        {
+            anim.CrossFade("RunL", 0.25f);
+        }
+        else
+        {
+            anim.CrossFade("Idle", 0.25f);
+        }
+
+    }
+
     /*
         정규화 벡터 (Normalized Vector), 단위벡터(Unit Vector)
 
