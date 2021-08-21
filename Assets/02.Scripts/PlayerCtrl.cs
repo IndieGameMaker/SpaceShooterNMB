@@ -33,6 +33,9 @@ public class PlayerCtrl : MonoBehaviour
         tr.Translate(dir.normalized * Time.deltaTime * moveSpeed);
         // 회전처리
         tr.Rotate(Vector3.up * Time.deltaTime * turnSpeed * r);
+
+        // 애니메이션 처리
+        PlayerAnimation();
     }
 
     void PlayerAnimation()
