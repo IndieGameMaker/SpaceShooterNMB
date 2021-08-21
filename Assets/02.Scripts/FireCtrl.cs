@@ -8,7 +8,7 @@ public class FireCtrl : MonoBehaviour
     public Transform firePos;
     public AudioClip fireSfx;
 
-    private AudioSource audio;
+    private new AudioSource audio;
 
     void Start()
     {
